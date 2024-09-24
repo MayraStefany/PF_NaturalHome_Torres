@@ -1,0 +1,7 @@
+.icon-animation {
+  transition: transform 0.3s ease;
+}
+
+.icon-animation:hover {
+  transform: rotate(180deg);
+}
