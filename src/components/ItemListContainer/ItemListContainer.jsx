@@ -12,7 +12,6 @@ import {
   Text
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { GiPopcorn } from "react-icons/gi";
 
 export const ItemListContainer = ({ products }) => {
   return (
@@ -67,9 +66,6 @@ export const ItemListContainer = ({ products }) => {
                 </Button>
               </Link>
             </ButtonGroup>
-            <Box display="flex" alignItems="center">
-              <GiPopcorn size="20px" color="#998189" />
-            </Box>
           </CardFooter>
         </Card>
       ))}

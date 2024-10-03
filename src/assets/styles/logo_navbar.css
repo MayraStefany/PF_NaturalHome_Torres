@@ -1,0 +1,13 @@
+/*-------------------------*/
+/*Creado por: Mayra Torres */
+/* logo_navbar.css         */
+/*-------------------------*/
+.logo-text {
+  font-size: 1.75rem; 
+  font-weight: bold;
+  color: #547f57; 
+  font-family: "Satisfy", cursive; 
+  letter-spacing: 0.1em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
+  margin-left: 8px; 
+}
