@@ -18,7 +18,6 @@ import {
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import "../../assets/styles/button_home.css";
-import { useProductsOferta } from '../../hooks/useProductsOferta';
 
 // Datos del deslizador
 const sliderImages = [
@@ -28,8 +27,7 @@ const sliderImages = [
   { id: 4, src: "../../src/assets/img/img_portadas/Fondo_sunglasses_4.jpeg", alt: "Imagen 4", buttonText: "VE EL MUNDO CON ESTILO", link: "/category/sunglasses" }
 ];
 
-export const SliderImagesContainer = () => {
-  const { products, loading } = useProductsOferta();
+export const SliderImagesContainer = ({ products, loading }) => {
 
   const sliderSettings = {
     dots: true,

@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 import { SliderImagesContainer } from "../components";
-import { useProductsOferta } from '../hooks/useProductsOferta';
+import { useProductsByCategory } from '../hooks/useProductsByCategory';
 
 export const Home = () => {
-  const { products, loading } = useProductsOferta();
+  const { products, loading } = useProductsByCategory("home-decoration");
 
   return (
     <SliderImagesContainer products={products} loading={loading} />

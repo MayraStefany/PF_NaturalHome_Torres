@@ -9,16 +9,14 @@ export const CartProvider = ({ children }) => {
     const existingProduct = cartState.find((item) => item.id === product.id);
 
     if (existingProduct) {
-      // Si el producto ya está en el carrito, actualizamos la cantidad, sumando solo la diferencia
       setCartState(
         cartState.map((item) =>
           item.id === product.id
-            ? { ...item, qtyItem: item.qtyItem + 1 } // Aquí solo sumamos 1 a la cantidad existente
+            ? { ...item, qtyItem: item.qtyItem + 1 } 
             : item
         )
       );
     } else {
-      // Si el producto no está en el carrito, lo agregamos
       setCartState([...cartState, { ...product, qtyItem }]);
     }
   };
@@ -30,7 +28,6 @@ export const CartProvider = ({ children }) => {
       if (existingProduct.qtyItem === 1) {
         setCartState(cartState.filter((item) => item.id !== product.id));
       } else {
-        // Si la cantidad es mayor a 1, restamos 1 a la cantidad existente
         setCartState(
           cartState.map((item) =>
             item.id === product.id
