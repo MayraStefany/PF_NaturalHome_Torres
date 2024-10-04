@@ -7,8 +7,8 @@ export const useProductById = (id) => {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    const producItem = doc(db, "products", id);
-    getDoc(producItem)
+    const productItem = doc(db, "products", id);
+    getDoc(productItem)
       .then((snapshot) => {
         setProduct({ id: snapshot.id, ...snapshot.data() });
       })

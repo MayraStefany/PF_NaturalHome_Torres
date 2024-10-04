@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext, useState } from "react";
 import {
   Box,
   Container,
@@ -13,18 +13,12 @@ import {
   StackDivider,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { CartContext } from "../../context/CartContext";
+import { CartContext } from "../../context";
 
 
 export const ItemDetailContainer = ({ product }) => {
-  const [showCount, setShowCount] = useState(false);
   const [count, setCount] = useState(0);
-
   const { addItem, removeItem } = useContext(CartContext);
-
-  const handleShowCount = () => {
-    setShowCount(!showCount);
-  };
 
   const handleIncrement = () => {
     if (count < product.stock) {
@@ -98,30 +92,11 @@ export const ItemDetailContainer = ({ product }) => {
             </VStack>
           </Stack>
 
-          <Button
-            rounded={"none"}
-            w={"full"}
-            mt={8}
-            size={"lg"}
-            py={"7"}
-            bg={useColorModeValue("gray.900", "gray.50")}
-            color={useColorModeValue("white", "gray.900")}
-            textTransform={"uppercase"}
-            _hover={{
-              transform: "translateY(2px)",
-              boxShadow: "lg",
-            }}
-            onClick={handleShowCount}
-          >
-            Agregar al carrito
-          </Button>
-          {showCount && (
-            <Stack direction="row" spacing={4} align="center" mt={4}>
-              <Button onClick={handleDecrement}>-</Button>
-              <Text fontSize="lg">{count}</Text>
-              <Button onClick={handleIncrement}>+</Button>
-            </Stack>
-          )}
+          <Stack direction="row" spacing={4} align="center" mt={4}>
+            <Button onClick={handleDecrement}>-</Button>
+            <Text fontSize="lg">{count}</Text>
+            <Button onClick={handleIncrement}>+</Button>
+          </Stack>
         </Stack>
       </SimpleGrid>
     </Container>
