@@ -3,11 +3,14 @@ import React from 'react';
 import { MainRouter } from './routes';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { CartProvider } from "./context";
 
 function App() {
   return (
     <ChakraProvider>
-      <MainRouter />
+      <CartProvider>
+        <MainRouter />
+      </CartProvider>
     </ChakraProvider>
   );
 }

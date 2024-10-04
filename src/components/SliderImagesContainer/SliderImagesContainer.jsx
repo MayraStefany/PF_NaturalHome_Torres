@@ -98,13 +98,12 @@ export const SliderImagesContainer = () => {
                 <CardBody>
                   <Image
                     src={product.thumbnail}
-                    alt={product.name}
                     borderRadius="md"
                     objectFit="cover"
                     height="205px"
                     width="100%"
                   />
-                  <Badge colorScheme="red" position="absolute" top="10px" right="10px">Oferta</Badge> {/* Etiqueta de oferta */}
+                  <Badge colorScheme="red" position="absolute" top="10px" right="10px">Oferta</Badge>
                   <Stack mt="4" spacing="3">
                     <Heading size="md" fontWeight="bold" color="#998189">
                       {product.title}
