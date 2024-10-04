@@ -1,12 +1,13 @@
 import React from 'react';
-import { ItemListContainer } from "../components";
-import { useProducts } from '../hooks/useProducts';
-
+import { SliderImagesContainer } from "../components";
+import { useProductsOferta } from '../hooks/useProductsOferta';
 
 export const Home = () => {
+  const { products, loading } = useProductsOferta();
 
-  const { products, loading } = useProducts();
-
-  return <ItemListContainer products={products}/>;
-  /*return <ItemListContainer greeting="Bienvenidos a Popcorn & Pics!"/>;*/
-}
+  return (
+    <SliderImagesContainer products={products} loading={loading} />
+    /*return <ItemListContainer products={products}/>;*/
+    /*return <ItemListContainer greeting="Bienvenidos a Popcorn & Pics!"/>;*/
+  );
+};
