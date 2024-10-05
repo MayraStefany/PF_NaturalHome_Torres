@@ -10,6 +10,7 @@ export const Footer = () => {
       color="grey"
       position="relative"
       bottom={0}
+      mt="auto" 
     >
       <Center>
         <Text fontSize="sm">

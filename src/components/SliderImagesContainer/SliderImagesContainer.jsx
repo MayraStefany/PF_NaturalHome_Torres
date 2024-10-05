@@ -19,7 +19,6 @@ import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import "../../assets/styles/button_home.css";
 
-// Datos del deslizador
 const sliderImages = [
   { id: 1, src: "../../src/assets/img/img_portadas/HomeDecorationbuy_1.jpeg", alt: "Imagen 1", buttonText: "ARTÍCULOS DE DECORACIÓN CON ALMA", link: "/category/home-decoration" },
   { id: 2, src: "../../src/assets/img/img_portadas/Furniture_buy_2.jpeg", alt: "Imagen 2", buttonText: "DESCUBRE MUEBLES DE ESTILO Y CALIDEZ", link: "/category/furniture" },
@@ -28,7 +27,6 @@ const sliderImages = [
 ];
 
 export const SliderImagesContainer = ({ products, loading }) => {
-
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -73,7 +71,7 @@ export const SliderImagesContainer = ({ products, loading }) => {
       </Box>
 
       {/* Tarjetas de categoría "home-decoration" */}
-      <Box p={6} bg="#1a202c" mb={40}> 
+      <Box p={6} bg="#1a202c" mb={40}>
         {loading ? (
           <Center>
             <Spinner />
@@ -85,15 +83,16 @@ export const SliderImagesContainer = ({ products, loading }) => {
                 key={product.id}
                 maxW="sm"
                 margin="1rem"
-                maxH="lg"
                 color="white"
                 boxShadow="md"
                 borderRadius="lg"
                 overflow="hidden"
                 transition="transform 0.2s"
                 _hover={{ transform: "scale(1.02)", boxShadow: "lg" }}
+                minH="400px"
+                maxH="40px"
               >
-                <CardBody>
+                <CardBody display="flex" flexDirection="column" height="100%">
                   <Image
                     src={product.thumbnail}
                     borderRadius="md"
@@ -103,7 +102,7 @@ export const SliderImagesContainer = ({ products, loading }) => {
                   />
                   <Badge colorScheme="red" position="absolute" top="10px" right="10px">Oferta</Badge>
                   <Stack mt="4" spacing="3">
-                    <Heading size="md" fontWeight="bold" color="#998189">
+                    <Heading size="md" fontWeight="bold" color="#998189" isTruncated>
                       {product.title}
                     </Heading>
                     <Text color="red.300" fontSize="lg" fontWeight="bold">
