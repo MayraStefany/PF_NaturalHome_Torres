@@ -78,7 +78,7 @@ export const SliderImagesContainer = ({ products, loading }) => {
           </Center>
         ) : (
           <Box display="flex" flexWrap="wrap" justifyContent="center" p={6}>
-            {products.map((product) => (
+            {products.slice(0, 5).map((product) => (
               <Card
                 key={product.id}
                 maxW="sm"
@@ -90,7 +90,6 @@ export const SliderImagesContainer = ({ products, loading }) => {
                 transition="transform 0.2s"
                 _hover={{ transform: "scale(1.02)", boxShadow: "lg" }}
                 minH="400px"
-                maxH="40px"
               >
                 <CardBody display="flex" flexDirection="column" height="100%">
                   <Image
